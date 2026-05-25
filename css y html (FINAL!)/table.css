@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&display=swap');
+
+:root {
+  --color-bg:      #0a0e1a;
+  --color-surface: #111827;
+  --color-border:  #1e2d45;
+  --color-gold:    #c8a96e;
+  --color-ice:     #a8c8e8;
+  --color-text:    #dde6f0;
+  --color-muted:   #6b8099;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+body > a:first-child {
+  display: inline-block;
+  color: var(--color-gold);
+  text-decoration: none;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-bottom: 1px solid transparent;
+  margin-bottom: 2rem;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+body > a:first-child:hover {
+  color: #fff;
+  border-bottom-color: var(--color-gold);
+}
+
+section {
+  flex: 1;
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+section h2 {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
+  color: #fff;
+  letter-spacing: 0.06em;
+}
+
+section > p {
+  color: var(--color-ice);
+  font-style: italic;
+  font-size: 1rem;
+  border-left: 2px solid var(--color-gold);
+  padding-left: 1rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: none;        /* reemplaza el border="16" del HTML */
+  background: var(--color-surface);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+thead {
+  background: var(--color-border);
+}
+
+thead th {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 0.8rem;
+  color: var(--color-gold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 1rem 1.4rem;
+  text-align: left;
+  border-bottom: 2px solid var(--color-gold);
+}
+
+tbody tr {
+  border-bottom: 1px solid var(--color-border);
+  transition: background 0.2s;
+}
+
+tbody tr:last-child {
+  border-bottom: none;
+}
+
+tbody tr:hover {
+  background: rgba(200, 169, 110, 0.07);
+}
+
+tbody td {
+  padding: 1rem 1.4rem;
+  color: var(--color-text);
+  font-size: 1rem;
+}
+
+@media (max-width: 560px) {
+  thead th,
+  tbody td {
+    padding: 0.7rem 0.8rem;
+    font-size: 0.9rem;
+  }
+}
